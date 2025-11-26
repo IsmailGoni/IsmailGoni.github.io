@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire de contact</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #020617;
+            padding: 24px 28px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+        }
+        h1 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 1.4rem;
+            color: #38bdf8;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #1f2937;
+            background: #020617;
+            color: #e5e7eb;
+            margin-bottom: 14px;
+            font: inherit;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #38bdf8;
+        }
+        button {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: none;
+            background: #38bdf8;
+            color: #020617;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover {
+            filter: brightness(1.05);
+        }
+        .note {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Formulaire de contact</h1>
+    <form>
+        <label for="name">Nom complet</label>
+        <input id="name" type="text" placeholder="Votre nom" required>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="vous@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Votre message..." required></textarea>
+
+        <button type="submit">Envoyer</button>
+        <p class="note">Ce formulaire est statique (aucun envoi réel pour le moment).</p>
+    </form>
+</div>
+</body>
+</html>

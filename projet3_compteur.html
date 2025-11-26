@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Compteur JavaScript</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            background: #020617;
+            color: #e5e7eb;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box {
+            background: #0f172a;
+            padding: 24px 28px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+            width: 260px;
+        }
+        h1 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 1.4rem;
+        }
+        .value {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 0 4px;
+            border-radius: 999px;
+            border: none;
+            background: #38bdf8;
+            color: #020617;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover {
+            filter: brightness(1.05);
+        }
+        .reset {
+            background: #f97316;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h1>Compteur</h1>
+    <div id="value" class="value">0</div>
+    <div>
+        <button id="minus">-1</button>
+        <button id="plus">+1</button>
+    </div>
+    <button id="reset" class="reset">Réinitialiser</button>
+</div>
+
+<script>
+    const valueEl = document.getElementById('value');
+    const minusBtn = document.getElementById('minus');
+    const plusBtn = document.getElementById('plus');
+    const resetBtn = document.getElementById('reset');
+
+    let count = 0;
+
+    function updateDisplay() {
+        valueEl.textContent = count;
+    }
+
+    minusBtn.addEventListener('click', () => {
+        count--;
+        updateDisplay();
+    });
+
+    plusBtn.addEventListener('click', () => {
+        count++;
+        updateDisplay();
+    });
+
+    resetBtn.addEventListener('click', () => {
+        count = 0;
+        updateDisplay();
+    });
+</script>
+</body>
+</html>
